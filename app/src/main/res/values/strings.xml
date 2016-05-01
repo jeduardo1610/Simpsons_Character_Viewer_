@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Simpsons_Character_Viewer_</string>
+
+    <string-array name="title">
+        <item>Headline 1</item>
+        <item>Headline 2</item>
+        <item>Headline 3</item>
+        <item>Headline 4</item>
+        <item>Headline 5</item>
+    </string-array>
+
+    <string-array name="content">
+        <item>News Line 1.../n
+        Line 2.../n
+        Line 3.../n</item>
+    </string-array>
+
+</resources>
