@@ -2,8 +2,12 @@ package simpsonsviewer.xfinity.com.simpsons_character_viewer_.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;import com.android.volley.toolbox.ImageLoader;
+import android.os.Bundle;
+
+import com.android.volley.toolbox.ImageLoader;
+
 import java.util.HashMap;
+
 import simpsonsviewer.xfinity.com.simpsons_character_viewer_.Controller.CustomVolleyRequest;
 import simpsonsviewer.xfinity.com.simpsons_character_viewer_.Fragments.DetailFragment;
 import simpsonsviewer.xfinity.com.simpsons_character_viewer_.R;
@@ -17,7 +21,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         Intent intent = getIntent();
-        HashMap<String,String> detail = (HashMap<String, String>) intent.getSerializableExtra("detail");
+        HashMap<String, String> detail = (HashMap<String, String>) intent.getSerializableExtra("detail");
         String url = intent.getStringExtra("url");
         String name = intent.getStringExtra("name");
         setTitle(name);
@@ -26,7 +30,7 @@ public class DetailActivity extends AppCompatActivity {
                 .getImageLoader();
         DetailFragment detailFragment = (DetailFragment) getSupportFragmentManager().findFragmentById(R.id.detailFragment);
         detailFragment.cleanUp();
-        detailFragment.setUp(this,detail,url,imageLoader,name);
+        detailFragment.setUp(this, detail, url, imageLoader, name);
     }
 
 

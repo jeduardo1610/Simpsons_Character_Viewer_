@@ -11,7 +11,7 @@ public class ObjectDescriptor {
     private String detailUrl;
 
 
-    public ObjectDescriptor(){
+    public ObjectDescriptor() {
 
     }
 
@@ -47,10 +47,6 @@ public class ObjectDescriptor {
     public void setCharacterDetail(String characterDetail) {
         this.characterDetail = characterDetail;
     }
-
-
-
-
 
 
 }

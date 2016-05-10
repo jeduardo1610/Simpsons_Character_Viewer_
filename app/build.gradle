@@ -17,6 +17,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        simpsons {
+            applicationId "com.xfinity.simpsonsviewer"
+        }
+
+        futurama {
+            applicationId "com.xfinity.futuramaviewer"
+        }
+    }
+
 }
 
 dependencies {

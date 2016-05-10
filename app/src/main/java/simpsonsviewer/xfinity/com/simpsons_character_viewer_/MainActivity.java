@@ -5,40 +5,57 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.android.volley.toolbox.ImageLoader;
+
 import java.io.Serializable;
 import java.util.HashMap;
+
 import simpsonsviewer.xfinity.com.simpsons_character_viewer_.Activities.DetailActivity;
-import simpsonsviewer.xfinity.com.simpsons_character_viewer_.Controller.OnHeadlineClickListener;
+import simpsonsviewer.xfinity.com.simpsons_character_viewer_.Controller.OnItemClickListener;
 import simpsonsviewer.xfinity.com.simpsons_character_viewer_.Fragments.DetailFragment;
 
-public class MainActivity extends AppCompatActivity implements OnHeadlineClickListener {
+public class MainActivity extends AppCompatActivity implements OnItemClickListener {
 
-    private final String TITLE = "Simpsons Character Viewer";
+    private final String TITLE_SIMPSONS = "Simpsons Character Viewer";
+    private final String TITLE_FUTURAMA = "Futurama Character Viewer";
+    private final String FLAVOR_SIMPSONS = "simpsons";
+    private final String FLAVOR_FUTURAMA = "futurama";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle(TITLE);
+
+        if(BuildConfig.FLAVOR.contains(FLAVOR_SIMPSONS)){
+            setTitle(TITLE_SIMPSONS);
+        }
+        else if(BuildConfig.FLAVOR.contains(FLAVOR_FUTURAMA)){
+            setTitle(TITLE_FUTURAMA);
+
+        }
+
     }
 
     @Override
-    public void headLineSelected(Activity activity, HashMap<String, String> detail, String urlImage, ImageLoader image, String name) {
+    public void itemLineSelected(Activity activity, HashMap<String, String> detail, String urlImage, ImageLoader image, String name) {
 
         DetailFragment detailFragment = (DetailFragment) getSupportFragmentManager().findFragmentById(R.id.detailFragment);
 
 
-        if(detailFragment == null){
+        if (detailFragment == null) {
 
-            Intent intent = new Intent(this,DetailActivity.class);
-            intent.putExtra("detail",(Serializable) detail);
-            intent.putExtra("url",urlImage);
-            intent.putExtra("name",name);
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra("detail", (Serializable) detail);
+            intent.putExtra("url", urlImage);
+            intent.putExtra("name", name);
             startActivity(intent);
-        }else{
+        } else {
             detailFragment.cleanUp();
-            detailFragment.setUp(this,detail,urlImage,image,name);
+            detailFragment.setUp(this, detail, urlImage, image, name);
         }
     }
+
 }
+
