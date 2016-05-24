@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private final String TITLE_FUTURAMA = "Futurama Character Viewer";
     private final String FLAVOR_SIMPSONS = "simpsons";
     private final String FLAVOR_FUTURAMA = "futurama";
+    private final String TEST_BRANCH = "Test-Branch";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
