@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private final String FLAVOR_SIMPSONS = "simpsons";
     private final String FLAVOR_FUTURAMA = "futurama";
     private final String TEST_BRANCH = "Test-Branch";
+    private final String TEST_BRANCH_2 = "Test-Branch";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
